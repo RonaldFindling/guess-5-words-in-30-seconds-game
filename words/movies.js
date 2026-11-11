@@ -1,0 +1,28 @@
+// Word pack "movies". The pack name comes from the file name.
+wordPack([
+  "Titanic",
+  "Jurassic Park",
+  "The Lion King",
+  "Jaws",
+  "Back to the Future",
+  "The Godfather",
+  "Frozen",
+  "Toy Story",
+  "E.T.",
+  "The Matrix",
+  "Ghostbusters",
+  "Forrest Gump",
+  "Shrek",
+  "Rocky",
+  "Indiana Jones",
+  "Finding Nemo",
+  "Home Alone",
+  "Pulp Fiction",
+  "Mary Poppins",
+  "The Wizard of Oz",
+  "King Kong",
+  "Top Gun",
+  "Grease",
+  "Casablanca",
+  "Avatar"
+]);

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>30 Seconds</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-phase="idle">
+  <header class="topbar">
+    <h1>30 Seconds</h1>
+    <button id="settings-btn" class="icon-btn" type="button" aria-label="Settings" title="Settings">⚙</button>
+  </header>
+
+  <main class="stage">
+    <div id="error" class="banner banner-error" hidden></div>
+    <div id="warning" class="banner banner-warning" hidden></div>
+
+    <p id="phase" class="phase"></p>
+    <div id="timer" class="timer" aria-live="off">30</div>
+
+    <ol id="words" class="words" aria-label="Words to explain"></ol>
+    <p id="result" class="result" aria-live="polite"></p>
+
+    <div class="controls">
+      <button id="start-btn" class="btn btn-primary" type="button">Start round</button>
+      <button id="ready-btn" class="btn" type="button" hidden>I'm ready – start the clock</button>
+      <button id="stop-btn" class="btn" type="button" hidden>End round</button>
+    </div>
+    <p class="hint" id="hint"></p>
+
+    <section class="pack-picker" aria-labelledby="packs-title">
+      <h2 id="packs-title">Word packs</h2>
+      <div id="packs" class="chips"></div>
+      <p id="pack-summary" class="pack-summary"></p>
+    </section>
+  </main>
+
+  <dialog id="settings-dialog" class="dialog">
+    <form id="settings-form" method="dialog">
+      <h2>Settings</h2>
+      <label class="field">
+        <span>Guessing time (seconds)</span>
+        <input id="guess-input" type="number" min="5" max="300" step="1" required>
+        <small id="guess-default"></small>
+      </label>
+      <label class="field">
+        <span>Preview time (seconds, 0 = off)</span>
+        <input id="preview-input" type="number" min="0" max="120" step="1" required>
+        <small id="preview-default"></small>
+      </label>
+      <p id="settings-error" class="field-error" hidden></p>
+      <p class="note">Changes are remembered in this browser. Defaults come from <code>settings.js</code>.</p>
+      <div class="dialog-actions">
+        <button id="reset-btn" class="btn btn-link" type="button">Reset to file defaults</button>
+        <span class="spacer"></span>
+        <button id="cancel-btn" class="btn" type="button">Cancel</button>
+        <button id="save-btn" class="btn btn-primary" type="submit">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="settings.js"></script>
+  <!-- app.js loads the word packs from words/ as listed in settings.js -->
+  <script src="app.js"></script>
+</body>
+</html>
